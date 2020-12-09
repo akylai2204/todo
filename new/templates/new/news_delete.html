@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Record deletion{% endblock %}
+
+{% block content %}
+    <div class="ind">
+        <h1><b>Record deletion</b></h1>
+       <form method="post">
+            {% csrf_token %}
+            <button class="btn btn-success" type="submit">record deletion</button>
+            <span>{{ error }}</span><br>
+       </form>
+    </div>
+{% endblock %}

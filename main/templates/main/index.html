@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="ind">  
+        <h1><b>{{ title }}</h1></b>
+        <p><b>Hello, {{ user }}!</b></p>
+            <img src="https://media.rbcdn.ru/media/news/a8ou84y_1IjqkjM.jpg" class="nothing">
+            <br>
+            <br>
+            <em class="h3">Это простой список задач. Нужен он для того чтобы контролировать и не забывать дела, которые нужно сделать.</em>
+            <br>
+            <br>
+            <a href="{% url 'create' %}" class="btn btn-warning ">Начать</a>
+
+            {% for el in values %}
+                {% if el == 'Hello' %}
+                        <p>{{ el }}</p>
+                {% endif %}
+            {% endfor %}
+{% endblock %}
+
+            {}
+    </div>

@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Tasks{% endblock %}
+
+{% block content %}
+    <div class="ind">
+        <h1><b>Tasks</b><img src="https://lh3.googleusercontent.com/proxy/adcTp6IL1XvM0P8-ijjbWF8x3cby3Rh6Dsi1CUIOwdgcTVQDCX1XuXjgUCFz1D1YSd9xa3OJBts-PciFr6w_l2HYI-xEfxuAMgQBRTdhOCduNWDb7R7r32g4lzDvv9j9NvPbEkNyrEgOwfTiIeA" class="tasks"></h1>
+        {% if new %}
+            {% for el in new %}
+                <div class="alert alert-warning">
+                    <h2>{{ el.title }}</h2>
+                    <h4>{{ el.description }}</h4>
+                    <p>{{ el.data }}</p>
+
+                    <a href="{% url 'news_detail' el.id %}" class="btn btn-warning">Go over</a>
+                </div>
+            {% endfor %}
+        {% else %}   
+        <div class="alert alert-dark" role="alert">
+            You don't have any records!
+        </div>
+        {% endif %}
+
+        {# Комментарий #}
+    </div>
+{% endblock %}
